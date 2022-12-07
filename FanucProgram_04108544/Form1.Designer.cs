@@ -45,26 +45,6 @@
             this.SpindleLoadLabel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.ProccessingTimeLabel = new System.Windows.Forms.Label();
-            this.ZWorkOffsetLabel = new System.Windows.Forms.Label();
-            this.YWorkOffsetLabel = new System.Windows.Forms.Label();
-            this.XWorkOffsetLabel = new System.Windows.Forms.Label();
-            this.label71 = new System.Windows.Forms.Label();
-            this.label72 = new System.Windows.Forms.Label();
-            this.label73 = new System.Windows.Forms.Label();
-            this.ZRemainCoorLabel = new System.Windows.Forms.Label();
-            this.YRemainCoorLabel = new System.Windows.Forms.Label();
-            this.XRemainCoorLabel = new System.Windows.Forms.Label();
-            this.label64 = new System.Windows.Forms.Label();
-            this.label65 = new System.Windows.Forms.Label();
-            this.label66 = new System.Windows.Forms.Label();
-            this.label67 = new System.Windows.Forms.Label();
-            this.ZRelativeCoorLabel = new System.Windows.Forms.Label();
-            this.YRelativeCoorLabel = new System.Windows.Forms.Label();
-            this.XRelativeCoorLabel = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
-            this.label58 = new System.Windows.Forms.Label();
-            this.label59 = new System.Windows.Forms.Label();
-            this.label60 = new System.Windows.Forms.Label();
             this.ZMechCoorLabel = new System.Windows.Forms.Label();
             this.YMechCoorLabel = new System.Windows.Forms.Label();
             this.XMechCoorLabel = new System.Windows.Forms.Label();
@@ -79,9 +59,14 @@
             this.label42 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.ZVibLabel = new System.Windows.Forms.Label();
+            this.YVibLabel = new System.Windows.Forms.Label();
+            this.XVibLabel = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -229,190 +214,10 @@
             this.ProccessingTimeLabel.Text = "0";
             this.ProccessingTimeLabel.Click += new System.EventHandler(this.ProccessingTimeLabel_Click);
             // 
-            // ZWorkOffsetLabel
-            // 
-            this.ZWorkOffsetLabel.AutoSize = true;
-            this.ZWorkOffsetLabel.Location = new System.Drawing.Point(396, 449);
-            this.ZWorkOffsetLabel.Name = "ZWorkOffsetLabel";
-            this.ZWorkOffsetLabel.Size = new System.Drawing.Size(39, 16);
-            this.ZWorkOffsetLabel.TabIndex = 182;
-            this.ZWorkOffsetLabel.Text = "0 mm";
-            // 
-            // YWorkOffsetLabel
-            // 
-            this.YWorkOffsetLabel.AutoSize = true;
-            this.YWorkOffsetLabel.Location = new System.Drawing.Point(396, 414);
-            this.YWorkOffsetLabel.Name = "YWorkOffsetLabel";
-            this.YWorkOffsetLabel.Size = new System.Drawing.Size(39, 16);
-            this.YWorkOffsetLabel.TabIndex = 181;
-            this.YWorkOffsetLabel.Text = "0 mm";
-            // 
-            // XWorkOffsetLabel
-            // 
-            this.XWorkOffsetLabel.AutoSize = true;
-            this.XWorkOffsetLabel.Location = new System.Drawing.Point(396, 381);
-            this.XWorkOffsetLabel.Name = "XWorkOffsetLabel";
-            this.XWorkOffsetLabel.Size = new System.Drawing.Size(39, 16);
-            this.XWorkOffsetLabel.TabIndex = 180;
-            this.XWorkOffsetLabel.Text = "0 mm";
-            // 
-            // label71
-            // 
-            this.label71.AutoSize = true;
-            this.label71.Location = new System.Drawing.Point(362, 449);
-            this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(21, 16);
-            this.label71.TabIndex = 179;
-            this.label71.Text = "Z :";
-            // 
-            // label72
-            // 
-            this.label72.AutoSize = true;
-            this.label72.Location = new System.Drawing.Point(362, 414);
-            this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(22, 16);
-            this.label72.TabIndex = 178;
-            this.label72.Text = "Y :";
-            // 
-            // label73
-            // 
-            this.label73.AutoSize = true;
-            this.label73.Location = new System.Drawing.Point(362, 381);
-            this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(21, 16);
-            this.label73.TabIndex = 177;
-            this.label73.Text = "X :";
-            // 
-            // ZRemainCoorLabel
-            // 
-            this.ZRemainCoorLabel.AutoSize = true;
-            this.ZRemainCoorLabel.Location = new System.Drawing.Point(571, 305);
-            this.ZRemainCoorLabel.Name = "ZRemainCoorLabel";
-            this.ZRemainCoorLabel.Size = new System.Drawing.Size(39, 16);
-            this.ZRemainCoorLabel.TabIndex = 176;
-            this.ZRemainCoorLabel.Text = "0 mm";
-            // 
-            // YRemainCoorLabel
-            // 
-            this.YRemainCoorLabel.AutoSize = true;
-            this.YRemainCoorLabel.Location = new System.Drawing.Point(571, 270);
-            this.YRemainCoorLabel.Name = "YRemainCoorLabel";
-            this.YRemainCoorLabel.Size = new System.Drawing.Size(39, 16);
-            this.YRemainCoorLabel.TabIndex = 175;
-            this.YRemainCoorLabel.Text = "0 mm";
-            // 
-            // XRemainCoorLabel
-            // 
-            this.XRemainCoorLabel.AutoSize = true;
-            this.XRemainCoorLabel.Location = new System.Drawing.Point(571, 237);
-            this.XRemainCoorLabel.Name = "XRemainCoorLabel";
-            this.XRemainCoorLabel.Size = new System.Drawing.Size(39, 16);
-            this.XRemainCoorLabel.TabIndex = 174;
-            this.XRemainCoorLabel.Text = "0 mm";
-            // 
-            // label64
-            // 
-            this.label64.AutoSize = true;
-            this.label64.Location = new System.Drawing.Point(538, 305);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(21, 16);
-            this.label64.TabIndex = 173;
-            this.label64.Text = "Z :";
-            // 
-            // label65
-            // 
-            this.label65.AutoSize = true;
-            this.label65.Location = new System.Drawing.Point(538, 270);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(22, 16);
-            this.label65.TabIndex = 172;
-            this.label65.Text = "Y :";
-            // 
-            // label66
-            // 
-            this.label66.AutoSize = true;
-            this.label66.Location = new System.Drawing.Point(538, 237);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(21, 16);
-            this.label66.TabIndex = 171;
-            this.label66.Text = "X :";
-            // 
-            // label67
-            // 
-            this.label67.AutoSize = true;
-            this.label67.Location = new System.Drawing.Point(538, 198);
-            this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(144, 16);
-            this.label67.TabIndex = 170;
-            this.label67.Text = "Remaining Coordinate:";
-            // 
-            // ZRelativeCoorLabel
-            // 
-            this.ZRelativeCoorLabel.AutoSize = true;
-            this.ZRelativeCoorLabel.Location = new System.Drawing.Point(395, 305);
-            this.ZRelativeCoorLabel.Name = "ZRelativeCoorLabel";
-            this.ZRelativeCoorLabel.Size = new System.Drawing.Size(39, 16);
-            this.ZRelativeCoorLabel.TabIndex = 169;
-            this.ZRelativeCoorLabel.Text = "0 mm";
-            // 
-            // YRelativeCoorLabel
-            // 
-            this.YRelativeCoorLabel.AutoSize = true;
-            this.YRelativeCoorLabel.Location = new System.Drawing.Point(395, 270);
-            this.YRelativeCoorLabel.Name = "YRelativeCoorLabel";
-            this.YRelativeCoorLabel.Size = new System.Drawing.Size(39, 16);
-            this.YRelativeCoorLabel.TabIndex = 168;
-            this.YRelativeCoorLabel.Text = "0 mm";
-            // 
-            // XRelativeCoorLabel
-            // 
-            this.XRelativeCoorLabel.AutoSize = true;
-            this.XRelativeCoorLabel.Location = new System.Drawing.Point(395, 237);
-            this.XRelativeCoorLabel.Name = "XRelativeCoorLabel";
-            this.XRelativeCoorLabel.Size = new System.Drawing.Size(39, 16);
-            this.XRelativeCoorLabel.TabIndex = 167;
-            this.XRelativeCoorLabel.Text = "0 mm";
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(362, 305);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(21, 16);
-            this.label57.TabIndex = 166;
-            this.label57.Text = "Z :";
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(362, 270);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(22, 16);
-            this.label58.TabIndex = 165;
-            this.label58.Text = "Y :";
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(362, 237);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(21, 16);
-            this.label59.TabIndex = 164;
-            this.label59.Text = "X :";
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.Location = new System.Drawing.Point(362, 198);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(129, 16);
-            this.label60.TabIndex = 163;
-            this.label60.Text = "Relative Coordinate:";
-            // 
             // ZMechCoorLabel
             // 
             this.ZMechCoorLabel.AutoSize = true;
-            this.ZMechCoorLabel.Location = new System.Drawing.Point(571, 150);
+            this.ZMechCoorLabel.Location = new System.Drawing.Point(401, 150);
             this.ZMechCoorLabel.Name = "ZMechCoorLabel";
             this.ZMechCoorLabel.Size = new System.Drawing.Size(39, 16);
             this.ZMechCoorLabel.TabIndex = 162;
@@ -421,7 +226,7 @@
             // YMechCoorLabel
             // 
             this.YMechCoorLabel.AutoSize = true;
-            this.YMechCoorLabel.Location = new System.Drawing.Point(571, 116);
+            this.YMechCoorLabel.Location = new System.Drawing.Point(401, 116);
             this.YMechCoorLabel.Name = "YMechCoorLabel";
             this.YMechCoorLabel.Size = new System.Drawing.Size(39, 16);
             this.YMechCoorLabel.TabIndex = 161;
@@ -430,7 +235,7 @@
             // XMechCoorLabel
             // 
             this.XMechCoorLabel.AutoSize = true;
-            this.XMechCoorLabel.Location = new System.Drawing.Point(571, 82);
+            this.XMechCoorLabel.Location = new System.Drawing.Point(401, 82);
             this.XMechCoorLabel.Name = "XMechCoorLabel";
             this.XMechCoorLabel.Size = new System.Drawing.Size(39, 16);
             this.XMechCoorLabel.TabIndex = 160;
@@ -439,7 +244,7 @@
             // label50
             // 
             this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(538, 150);
+            this.label50.Location = new System.Drawing.Point(368, 150);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(21, 16);
             this.label50.TabIndex = 159;
@@ -448,7 +253,7 @@
             // label51
             // 
             this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(538, 116);
+            this.label51.Location = new System.Drawing.Point(368, 116);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(22, 16);
             this.label51.TabIndex = 158;
@@ -457,7 +262,7 @@
             // label52
             // 
             this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(538, 82);
+            this.label52.Location = new System.Drawing.Point(368, 82);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(21, 16);
             this.label52.TabIndex = 157;
@@ -466,7 +271,7 @@
             // label53
             // 
             this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(538, 44);
+            this.label53.Location = new System.Drawing.Point(368, 44);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(148, 16);
             this.label53.TabIndex = 156;
@@ -475,7 +280,7 @@
             // ZAbsCoorLabel
             // 
             this.ZAbsCoorLabel.AutoSize = true;
-            this.ZAbsCoorLabel.Location = new System.Drawing.Point(395, 150);
+            this.ZAbsCoorLabel.Location = new System.Drawing.Point(401, 291);
             this.ZAbsCoorLabel.Name = "ZAbsCoorLabel";
             this.ZAbsCoorLabel.Size = new System.Drawing.Size(39, 16);
             this.ZAbsCoorLabel.TabIndex = 155;
@@ -484,7 +289,7 @@
             // YAbsCoorLabel
             // 
             this.YAbsCoorLabel.AutoSize = true;
-            this.YAbsCoorLabel.Location = new System.Drawing.Point(395, 116);
+            this.YAbsCoorLabel.Location = new System.Drawing.Point(401, 257);
             this.YAbsCoorLabel.Name = "YAbsCoorLabel";
             this.YAbsCoorLabel.Size = new System.Drawing.Size(39, 16);
             this.YAbsCoorLabel.TabIndex = 154;
@@ -493,7 +298,7 @@
             // XAbsCoorLabel
             // 
             this.XAbsCoorLabel.AutoSize = true;
-            this.XAbsCoorLabel.Location = new System.Drawing.Point(395, 82);
+            this.XAbsCoorLabel.Location = new System.Drawing.Point(401, 223);
             this.XAbsCoorLabel.Name = "XAbsCoorLabel";
             this.XAbsCoorLabel.Size = new System.Drawing.Size(39, 16);
             this.XAbsCoorLabel.TabIndex = 153;
@@ -502,7 +307,7 @@
             // label43
             // 
             this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(362, 150);
+            this.label43.Location = new System.Drawing.Point(368, 291);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(21, 16);
             this.label43.TabIndex = 152;
@@ -511,7 +316,7 @@
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(362, 116);
+            this.label42.Location = new System.Drawing.Point(368, 257);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(22, 16);
             this.label42.TabIndex = 151;
@@ -520,7 +325,7 @@
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(362, 82);
+            this.label41.Location = new System.Drawing.Point(368, 223);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(21, 16);
             this.label41.TabIndex = 150;
@@ -529,54 +334,88 @@
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(362, 44);
+            this.label40.Location = new System.Drawing.Point(368, 185);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(135, 16);
             this.label40.TabIndex = 149;
             this.label40.Text = "Absolute Coordinate :";
             // 
-            // label35
+            // ZVibLabel
             // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(430, 390);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(0, 16);
-            this.label35.TabIndex = 148;
+            this.ZVibLabel.AutoSize = true;
+            this.ZVibLabel.Location = new System.Drawing.Point(401, 430);
+            this.ZVibLabel.Name = "ZVibLabel";
+            this.ZVibLabel.Size = new System.Drawing.Size(39, 16);
+            this.ZVibLabel.TabIndex = 169;
+            this.ZVibLabel.Text = "0 mm";
             // 
-            // label34
+            // YVibLabel
             // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(362, 344);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(117, 16);
-            this.label34.TabIndex = 147;
-            this.label34.Text = "Work Offset Value:";
+            this.YVibLabel.AutoSize = true;
+            this.YVibLabel.Location = new System.Drawing.Point(401, 396);
+            this.YVibLabel.Name = "YVibLabel";
+            this.YVibLabel.Size = new System.Drawing.Size(39, 16);
+            this.YVibLabel.TabIndex = 168;
+            this.YVibLabel.Text = "0 mm";
+            // 
+            // XVibLabel
+            // 
+            this.XVibLabel.AutoSize = true;
+            this.XVibLabel.Location = new System.Drawing.Point(401, 362);
+            this.XVibLabel.Name = "XVibLabel";
+            this.XVibLabel.Size = new System.Drawing.Size(39, 16);
+            this.XVibLabel.TabIndex = 167;
+            this.XVibLabel.Text = "0 mm";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(368, 430);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(21, 16);
+            this.label11.TabIndex = 166;
+            this.label11.Text = "Z :";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(368, 396);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(22, 16);
+            this.label12.TabIndex = 165;
+            this.label12.Text = "Y :";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(368, 362);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(21, 16);
+            this.label13.TabIndex = 164;
+            this.label13.Text = "X :";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(368, 324);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(109, 16);
+            this.label14.TabIndex = 163;
+            this.label14.Text = "Vibration Sensor:";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(742, 492);
-            this.Controls.Add(this.ZWorkOffsetLabel);
-            this.Controls.Add(this.YWorkOffsetLabel);
-            this.Controls.Add(this.XWorkOffsetLabel);
-            this.Controls.Add(this.label71);
-            this.Controls.Add(this.label72);
-            this.Controls.Add(this.label73);
-            this.Controls.Add(this.ZRemainCoorLabel);
-            this.Controls.Add(this.YRemainCoorLabel);
-            this.Controls.Add(this.XRemainCoorLabel);
-            this.Controls.Add(this.label64);
-            this.Controls.Add(this.label65);
-            this.Controls.Add(this.label66);
-            this.Controls.Add(this.label67);
-            this.Controls.Add(this.ZRelativeCoorLabel);
-            this.Controls.Add(this.YRelativeCoorLabel);
-            this.Controls.Add(this.XRelativeCoorLabel);
-            this.Controls.Add(this.label57);
-            this.Controls.Add(this.label58);
-            this.Controls.Add(this.label59);
-            this.Controls.Add(this.label60);
+            this.Controls.Add(this.ZVibLabel);
+            this.Controls.Add(this.YVibLabel);
+            this.Controls.Add(this.XVibLabel);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.ZMechCoorLabel);
             this.Controls.Add(this.YMechCoorLabel);
             this.Controls.Add(this.XMechCoorLabel);
@@ -591,8 +430,6 @@
             this.Controls.Add(this.label42);
             this.Controls.Add(this.label41);
             this.Controls.Add(this.label40);
-            this.Controls.Add(this.label35);
-            this.Controls.Add(this.label34);
             this.Controls.Add(this.ProccessingTimeLabel);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.SpindleLoadLabel);
@@ -634,26 +471,6 @@
         private System.Windows.Forms.Label SpindleLoadLabel;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label ProccessingTimeLabel;
-        private System.Windows.Forms.Label ZWorkOffsetLabel;
-        private System.Windows.Forms.Label YWorkOffsetLabel;
-        private System.Windows.Forms.Label XWorkOffsetLabel;
-        private System.Windows.Forms.Label label71;
-        private System.Windows.Forms.Label label72;
-        private System.Windows.Forms.Label label73;
-        private System.Windows.Forms.Label ZRemainCoorLabel;
-        private System.Windows.Forms.Label YRemainCoorLabel;
-        private System.Windows.Forms.Label XRemainCoorLabel;
-        private System.Windows.Forms.Label label64;
-        private System.Windows.Forms.Label label65;
-        private System.Windows.Forms.Label label66;
-        private System.Windows.Forms.Label label67;
-        private System.Windows.Forms.Label ZRelativeCoorLabel;
-        private System.Windows.Forms.Label YRelativeCoorLabel;
-        private System.Windows.Forms.Label XRelativeCoorLabel;
-        private System.Windows.Forms.Label label57;
-        private System.Windows.Forms.Label label58;
-        private System.Windows.Forms.Label label59;
-        private System.Windows.Forms.Label label60;
         private System.Windows.Forms.Label ZMechCoorLabel;
         private System.Windows.Forms.Label YMechCoorLabel;
         private System.Windows.Forms.Label XMechCoorLabel;
@@ -668,9 +485,14 @@
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label ZVibLabel;
+        private System.Windows.Forms.Label YVibLabel;
+        private System.Windows.Forms.Label XVibLabel;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
     }
 }
 

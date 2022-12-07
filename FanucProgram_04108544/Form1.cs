@@ -78,9 +78,9 @@ namespace FanucProgram_04108544
             nc();//讀取nc單節
             abs();//絕對座標
             machine();//機械座標
-            RELATIVE();//相對座標
-            distance();//剩餘座標
-            RDZOFS();//讀取工件座標偏移值
+            //RELATIVE();//相對座標
+            //distance();//剩餘座標
+            //RDZOFS();//讀取工件座標偏移值
             RDSPMETER();//讀取主軸附載
             worktime();
             //RDPITCHR();//讀取螺距誤差補償數據
@@ -163,50 +163,6 @@ namespace FanucProgram_04108544
             ZMechCoorLabel.Text = _machinePosition_doublez * 10 + "mm";
         }
 
-        public void RELATIVE()//相對座標
-        {
-            Focas1.ODBAXIS RELATIVE = new Focas1.ODBAXIS();
-            Focas1.cnc_relative(FlibHndl, -1, 4 + 4 * Focas1.MAX_AXIS, RELATIVE);
-            double[] _RELATIVEPosition_double = new double[3];
-            for (int i = 0; i < 3; i++)
-                _RELATIVEPosition_double[i] = Convert.ToDouble(RELATIVE.data[i]) / Math.Pow(10, Decimalpoint);
-            double _RELATIVEPosition_doublex = Convert.ToDouble(_RELATIVEPosition_double[0].ToString("#0.000"));
-            double _RELATIVEPosition_doubley = Convert.ToDouble(_RELATIVEPosition_double[1].ToString("#0.000"));
-            double _RELATIVEPosition_doublez = Convert.ToDouble(_RELATIVEPosition_double[2].ToString("#0.000"));
-            XRelativeCoorLabel.Text = _RELATIVEPosition_doublex * 10 + "mm";
-            YRelativeCoorLabel.Text = _RELATIVEPosition_doubley * 10 + "mm";
-            ZRelativeCoorLabel.Text = _RELATIVEPosition_doublez * 10 + "mm";
-        }
-
-        public void distance()//剩餘座標
-        {
-            Focas1.ODBAXIS distance = new Focas1.ODBAXIS();
-            Focas1.cnc_distance(FlibHndl, -1, 4 + 4 * Focas1.MAX_AXIS, distance);
-            double[] _distancePosition_double = new double[3];
-            for (int i = 0; i < 3; i++)
-                _distancePosition_double[i] = Convert.ToDouble(distance.data[i]) / Math.Pow(10, Decimalpoint);
-            double _distancePosition_doublex = Convert.ToDouble(_distancePosition_double[0].ToString("#0.000"));
-            double _distancePosition_doubley = Convert.ToDouble(_distancePosition_double[1].ToString("#0.000"));
-            double _distancePosition_doublez = Convert.ToDouble(_distancePosition_double[2].ToString("#0.000"));
-            XRemainCoorLabel.Text = _distancePosition_doublex + "mm";
-            YRemainCoorLabel.Text = _distancePosition_doubley + "mm";
-            ZRemainCoorLabel.Text = _distancePosition_doublez + "mm";
-        }
-
-        public void RDZOFS()//讀取工件座標偏移值
-        {
-            Focas1.IODBZOFS RDZOFS = new Focas1.IODBZOFS();
-            Focas1.cnc_rdzofs(FlibHndl, 1, 4, 4 + 4 * 1, RDZOFS);
-            double[] _RDZOFSPosition_double = new double[3];
-            for (int i = 0; i < 3; i++)
-                _RDZOFSPosition_double[i] = Convert.ToDouble(RDZOFS.data[i]) / Math.Pow(10, Decimalpoint);
-            double _AbsolutePosition_doublex = Convert.ToDouble(_RDZOFSPosition_double[0].ToString("#0.000"));
-            double _AbsolutePosition_doubley = Convert.ToDouble(_RDZOFSPosition_double[1].ToString("#0.000"));
-            double _AbsolutePosition_doublez = Convert.ToDouble(_RDZOFSPosition_double[2].ToString("#0.000"));
-            XWorkOffsetLabel.Text = _AbsolutePosition_doublex + "mm";
-            YWorkOffsetLabel.Text = _AbsolutePosition_doubley + "mm";
-            ZWorkOffsetLabel.Text = _AbsolutePosition_doublez + "mm";
-        }
 
         public void RDSPMETER()//讀取主軸附載
         {
@@ -231,7 +187,7 @@ namespace FanucProgram_04108544
             Marshal.FreeCoTaskMem(ptrWork);
         }
 
-       public void worktime()
+        public void worktime()
         {
             Focas1.IODBPSD_1 param6757 = new Focas1.IODBPSD_1();
             Focas1.IODBPSD_1 param6758 = new Focas1.IODBPSD_1();
@@ -252,5 +208,54 @@ namespace FanucProgram_04108544
             }
         }
 
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //public void RELATIVE()//相對座標
+        //{
+        //    Focas1.ODBAXIS RELATIVE = new Focas1.ODBAXIS();
+        //    Focas1.cnc_relative(FlibHndl, -1, 4 + 4 * Focas1.MAX_AXIS, RELATIVE);
+        //    double[] _RELATIVEPosition_double = new double[3];
+        //    for (int i = 0; i < 3; i++)
+        //        _RELATIVEPosition_double[i] = Convert.ToDouble(RELATIVE.data[i]) / Math.Pow(10, Decimalpoint);
+        //    double _RELATIVEPosition_doublex = Convert.ToDouble(_RELATIVEPosition_double[0].ToString("#0.000"));
+        //    double _RELATIVEPosition_doubley = Convert.ToDouble(_RELATIVEPosition_double[1].ToString("#0.000"));
+        //    double _RELATIVEPosition_doublez = Convert.ToDouble(_RELATIVEPosition_double[2].ToString("#0.000"));
+        //    XRelativeCoorLabel.Text = _RELATIVEPosition_doublex * 10 + "mm";
+        //    YRelativeCoorLabel.Text = _RELATIVEPosition_doubley * 10 + "mm";
+        //    ZRelativeCoorLabel.Text = _RELATIVEPosition_doublez * 10 + "mm";
+        //}
+
+        //public void distance()//剩餘座標
+        //{
+        //    Focas1.ODBAXIS distance = new Focas1.ODBAXIS();
+        //    Focas1.cnc_distance(FlibHndl, -1, 4 + 4 * Focas1.MAX_AXIS, distance);
+        //    double[] _distancePosition_double = new double[3];
+        //    for (int i = 0; i < 3; i++)
+        //        _distancePosition_double[i] = Convert.ToDouble(distance.data[i]) / Math.Pow(10, Decimalpoint);
+        //    double _distancePosition_doublex = Convert.ToDouble(_distancePosition_double[0].ToString("#0.000"));
+        //    double _distancePosition_doubley = Convert.ToDouble(_distancePosition_double[1].ToString("#0.000"));
+        //    double _distancePosition_doublez = Convert.ToDouble(_distancePosition_double[2].ToString("#0.000"));
+        //    XRemainCoorLabel.Text = _distancePosition_doublex + "mm";
+        //    YRemainCoorLabel.Text = _distancePosition_doubley + "mm";
+        //    ZRemainCoorLabel.Text = _distancePosition_doublez + "mm";
+        //}
+
+        //public void RDZOFS()//讀取工件座標偏移值
+        //{
+        //    Focas1.IODBZOFS RDZOFS = new Focas1.IODBZOFS();
+        //    Focas1.cnc_rdzofs(FlibHndl, 1, 4, 4 + 4 * 1, RDZOFS);
+        //    double[] _RDZOFSPosition_double = new double[3];
+        //    for (int i = 0; i < 3; i++)
+        //        _RDZOFSPosition_double[i] = Convert.ToDouble(RDZOFS.data[i]) / Math.Pow(10, Decimalpoint);
+        //    double _AbsolutePosition_doublex = Convert.ToDouble(_RDZOFSPosition_double[0].ToString("#0.000"));
+        //    double _AbsolutePosition_doubley = Convert.ToDouble(_RDZOFSPosition_double[1].ToString("#0.000"));
+        //    double _AbsolutePosition_doublez = Convert.ToDouble(_RDZOFSPosition_double[2].ToString("#0.000"));
+        //    XWorkOffsetLabel.Text = _AbsolutePosition_doublex + "mm";
+        //    YWorkOffsetLabel.Text = _AbsolutePosition_doubley + "mm";
+        //    ZWorkOffsetLabel.Text = _AbsolutePosition_doublez + "mm";
+        //}
     }
 }
