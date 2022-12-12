@@ -367,6 +367,7 @@
             this.XVibLabel.Size = new System.Drawing.Size(39, 16);
             this.XVibLabel.TabIndex = 167;
             this.XVibLabel.Text = "0 mm";
+            this.XVibLabel.Click += new System.EventHandler(this.XVibLabel_Click);
             // 
             // label11
             // 
