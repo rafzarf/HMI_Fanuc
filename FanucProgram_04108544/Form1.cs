@@ -9,7 +9,9 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NationalInstruments.DAQmx;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 
 namespace FanucProgram_04108544
 {
@@ -23,6 +25,7 @@ namespace FanucProgram_04108544
         public object ip;
         public ushort port;
         public ushort FlibHndl;
+        private DataTable dataTable = null;
 
         private void label6_Click(object sender, EventArgs e)
         {
@@ -66,6 +69,7 @@ namespace FanucProgram_04108544
         string b;
         int Decimalpoint = 4;
 
+
         double[] vibrationx = new double[1024];
         double[] vibrationy = new double[1024];
         double[] vibrationz = new double[1024];
@@ -104,71 +108,70 @@ namespace FanucProgram_04108544
             //get_circleTime();//單一循環時間
         }
 
+        void Value0()
+        {
+            for (int i = 0; i <= 1023; i++)
+            {
+                //vibrationx[i] = Math.Abs((double)dataGridView1.Rows[i].Cells[0].Value);
+                //vibrationy[i] = Math.Abs((double)dataGridView1.Rows[i].Cells[1].Value);
+                //vibrationz[i] = Math.Abs((double)dataGridView1.Rows[i].Cells[2].Value);
+
+                vibrationx[i] = Math.Abs((double)dataTable.Rows[i][0]);
+                vibrationy[i] = Math.Abs((double)dataTable.Rows[i][1]);
+                vibrationz[i] = Math.Abs((double)dataTable.Rows[i][2]);
+            }
+
+            Array.Sort(vibrationx);
+            Array.Reverse(vibrationx);
+
+            Array.Sort(vibrationy);
+            Array.Reverse(vibrationy);
+
+            Array.Sort(vibrationz);
+            Array.Reverse(vibrationz);
+
+            int a20 = (vibrationx.Length) / 5;//¨ú«e20%¥­§¡
+
+            double sumidlex = 0.0;
+            double sumidley = 0.0;
+            double sumidlez = 0.0;
+            for (int i = 0; i < a20; i++)
+            {
+                sumidlex += vibrationx[i];
+                sumidley += vibrationy[i];
+                sumidlez += vibrationz[i];
+            }
+            sumidlex = sumidlex / a20;
+            sumidley = sumidley / a20;
+            sumidlez = sumidlez / a20;
+
+            if (idlevibx.Count >= 20)
+            {
+                for (int k = 1; k < idlevibx.Count; ++k)
+                {
+                    idlevibx[k - 1] = idlevibx[k];
+                    idleviby[k - 1] = idleviby[k];
+                    idlevibz[k - 1] = idlevibz[k];
+
+                }
+                idlevibx[idlevibx.Count - 1] = sumidlex;
+                idleviby[idleviby.Count - 1] = sumidley;
+                idlevibz[idlevibz.Count - 1] = sumidlez;
+            }
+            else
+            {
+                idlevibx.Add(sumidlex);
+                idleviby.Add(sumidley);
+                idlevibz.Add(sumidlez);
+            }
+
+        }
 
         public void vibrationsensor()
         {
             double[] vibrationx = new double[1024];
             double[] vibrationy = new double[1024];
             double[] vibrationz = new double[1024];
-
-            void Value0()
-            {
-                for (int i = 0; i <= 1023; i++)
-                {
-                    //vibrationx[i] = Math.Abs((double)dataGridView1.Rows[i].Cells[0].Value);
-                    //vibrationy[i] = Math.Abs((double)dataGridView1.Rows[i].Cells[1].Value);
-                    //vibrationz[i] = Math.Abs((double)dataGridView1.Rows[i].Cells[2].Value);
-
-                    vibrationx[i] = Math.Abs((double)dataTable.Rows[i][0]);
-                    vibrationy[i] = Math.Abs((double)dataTable.Rows[i][1]);
-                    vibrationz[i] = Math.Abs((double)dataTable.Rows[i][2]);
-                }
-
-                Array.Sort(vibrationx);
-                Array.Reverse(vibrationx);
-
-                Array.Sort(vibrationy);
-                Array.Reverse(vibrationy);
-
-                Array.Sort(vibrationz);
-                Array.Reverse(vibrationz);
-
-                int a20 = (vibrationx.Length) / 5;//¨ú«e20%¥­§¡
-
-                double sumidlex = 0.0;
-                double sumidley = 0.0;
-                double sumidlez = 0.0;
-                for (int i = 0; i < a20; i++)
-                {
-                    sumidlex += vibrationx[i];
-                    sumidley += vibrationy[i];
-                    sumidlez += vibrationz[i];
-                }
-                sumidlex = sumidlex / a20;
-                sumidley = sumidley / a20;
-                sumidlez = sumidlez / a20;
-
-                if (idlevibx.Count >= 20)
-                {
-                    for (int k = 1; k < idlevibx.Count; ++k)
-                    {
-                        idlevibx[k - 1] = idlevibx[k];
-                        idleviby[k - 1] = idleviby[k];
-                        idlevibz[k - 1] = idlevibz[k];
-
-                    }
-                    idlevibx[idlevibx.Count - 1] = sumidlex;
-                    idleviby[idleviby.Count - 1] = sumidley;
-                    idlevibz[idlevibz.Count - 1] = sumidlez;
-                }
-                else
-                {
-                    idlevibx.Add(sumidlex);
-                    idleviby.Add(sumidley);
-                    idlevibz.Add(sumidlez);
-                }
-
-            }
         }
 
         public void speed()//轉速
@@ -327,7 +330,12 @@ namespace FanucProgram_04108544
         List<double> idleviby = new List<double>();
         List<double> idlevibz = new List<double>();
 
-       
+        private void XVibLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
 
 
         //public void RELATIVE()//相對座標
