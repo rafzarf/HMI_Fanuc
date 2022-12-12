@@ -67,6 +67,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.StopButtonLabel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -404,11 +405,22 @@
             this.label14.Text = "Vibration Sensor:";
             this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
+            // StopButtonLabel
+            // 
+            this.StopButtonLabel.Location = new System.Drawing.Point(132, 150);
+            this.StopButtonLabel.Name = "StopButtonLabel";
+            this.StopButtonLabel.Size = new System.Drawing.Size(75, 23);
+            this.StopButtonLabel.TabIndex = 170;
+            this.StopButtonLabel.Text = "Stop Capture";
+            this.StopButtonLabel.UseVisualStyleBackColor = true;
+            this.StopButtonLabel.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(742, 492);
+            this.Controls.Add(this.StopButtonLabel);
             this.Controls.Add(this.ZVibLabel);
             this.Controls.Add(this.YVibLabel);
             this.Controls.Add(this.XVibLabel);
@@ -493,6 +505,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button StopButtonLabel;
     }
 }
 
